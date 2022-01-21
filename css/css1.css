@@ -1,0 +1,130 @@
+/*背景*/
+body{
+    background-color:#000000;
+}
+
+/*小正方体*/
+#wrap div{
+    height: 100px;
+    width: 100px;
+    margin-top:10px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+/*大正方体*/
+#wrap span{
+    height: 200px;
+    width: 200px;
+    background-color:green;
+    position: absolute;
+    display: block;
+    transition: all 0.9s;
+    opacity: 0.9;
+}
+
+/*小正方体的位置*/
+#wrap{
+    width: 200px;
+    height: 200px;
+    margin: 300px auto;
+    animation: rota 30s infinite; /*旋转周期*/
+    transform-style: preserve-3d; /*3D化*/
+}
+
+/*里面图片的大小*/
+#wrap div img{
+    height: 100px;
+    width: 100px;
+}
+
+/*外面图片的大小*/
+#wrap span img{
+    height: 200px;
+    width: 200px;
+}
+
+
+/* 小立方体旋转 */
+.in_front{
+    transform: translateZ(50px);
+}
+
+.in_after{
+    transform: translateZ(-50px);
+}
+
+.in_left{
+    transform: rotateY(90deg) translateZ(50px);
+}
+
+.in_right{
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+.in_up{
+    transform: rotateX(90deg) translateZ(50px);
+}
+
+.in_down{
+    transform: rotateX(-90deg) translateZ(50px);
+}
+
+
+
+/*旋转成大正方体*/
+.out_front{
+    transform: translateZ(100px);
+}
+
+.out_after{
+    transform: translateZ(-100px);
+}
+
+.out_left{
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.out_right{
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.out_up{
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.out_down{
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+/*设置3D旋转*/
+@keyframes rota{
+    from{transform: rotateX(0deg) rotateY(0deg);}
+    to{transform: rotateX(360deg) rotateY(360deg);}
+}
+
+/*鼠标移过去弹开*/
+#wrap:hover .out_front{
+    transform: translateZ(250px);
+}
+
+#wrap:hover .out_after{
+    transform: translateZ(-250px);
+}
+
+#wrap:hover .out_left{
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+#wrap:hover .out_right{
+    transform: rotateY(-90deg) translateZ(200px);
+}
+
+#wrap:hover .out_up{
+    transform: rotateX(90deg) translateZ(200px);
+}
+
+#wrap:hover .out_down{
+    transform: rotateX(-90deg) translateZ(200px);
+}
